@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FlamentHesaplamaV3
+{
+    public partial class hesapla : Form
+    {
+        double m, cm, saat, dakika, flament, saat2, zaman2, m2, flament2;
+        double zaman, sonzaman, flamentson, btflament, btzaman;
+        double hesapbit;
+        
+
+        public hesapla()
+        {
+            InitializeComponent();
+        }
+
+        private void giris_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+           
+        }
+        void temizle()
+        {
+
+        }
+        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (m_agirlik.Text  == "" || cm_agirlik.Text == "" || dakika_baski.Text == "" || saat_baski.Text == "")
+            {
+                MessageBox.Show("Lütfen Boş Kısımları Doldurunuz !");
+                m_agirlik.Clear();
+                cm_agirlik.Clear();
+                dakika_baski.Clear();
+                saat_baski.Clear();
+            }
+            else if (Convert.ToDouble(dakika_baski.Text) > 60)
+            {
+                MessageBox.Show("Dakika 60'dan Fazla Olamaz !");
+                dakika_baski.Clear();
+            }
+            else if (Convert.ToDouble(cm_agirlik.Text) > 99)
+            {
+                MessageBox.Show("Cm Uzunluğu 99'dan Fazla Olamaz !");
+                dakika_baski.Clear();
+            }
+            else
+            {
+                sonzaman = Convert.ToDouble(Form1.saat_ucret.ToString());
+                flamentson = Convert.ToDouble(Form1.flment_klo.ToString());
+
+                m = Convert.ToDouble(m_agirlik.Text);
+                cm = Convert.ToDouble(cm_agirlik.Text);
+                dakika = Convert.ToDouble(dakika_baski.Text);
+                saat = Convert.ToDouble(saat_baski.Text);
+
+                saat2 = saat * 60;
+                zaman = dakika + saat2;
+                zaman2 = zaman / 60;
+                btzaman = zaman2 * sonzaman;
+
+                m2 = m * 100;
+                flament = m2 + cm;
+                flament2 = (33000 / flament);
+                btflament = flamentson / flament2;
+
+                hesapbit = btzaman + btflament;
+                hesapbit = Math.Round(hesapbit, 2);
+
+                MessageBox.Show("Hesap Ücreti--> " + hesapbit + "₺");
+
+                m_agirlik.Clear();
+                cm_agirlik.Clear();
+                dakika_baski.Clear();
+                saat_baski.Clear();
+
+            }
+        }
+
+        private void hesapla_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show("Bu program Resul Tüzen tarafından yapılmıştır.");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 dgstr = new Form1();
+            dgstr.Show();
+            this.Hide();
+        }
+    }
+}
