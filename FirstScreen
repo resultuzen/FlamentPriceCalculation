@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FlamentHesaplamaV3
+{
+    public partial class Form1 : Form
+    {
+        public static double flment_klo = 0, saat_ucret = 0;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            textBox1.Text = flment_klo.ToString();
+            textBox2.Text = saat_ucret.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Lütfen Fiyat Bilgilerini Giriniz !");
+                textBox1.Clear();
+                textBox2.Clear();
+            }
+            else
+            {
+                Form1.flment_klo = Convert.ToDouble(textBox1.Text);
+                Form1.saat_ucret = Convert.ToDouble(textBox2.Text);
+                hesapla frm = new hesapla();
+                frm.Show();
+                this.Hide();
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show("Bu program Resul Tüzen tarafından yapılmıştır.");
+        }
+
+      }
+ }
+
