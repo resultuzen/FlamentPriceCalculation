@@ -1,7 +1,6 @@
-# FlamentPriceCalculation
-3D yazıya attığım parçamın artık fiyatını bu program sayesinde bulabiliyorum. Programda bulunan bazı özellikler şunlardır:
+# 3D Parça Maliyeti Hesaplama Programı
+3D yazıcıda basılacak olan parçanın artık fiyatını bu program sayesinde bulabilirsiniz. 
 
--Flament Kilosu: Flamenti almış olduğunuz fiyatı girebilirsiniz.                      
--Çalışma Ücreti: Makinenizin elektrik ücreti ve kullanım ücretini buraya saatlik olarak girebilirsiniz.
+Programı kodlarını görüntülemek ve indirmek için burayı kullanabilirsiniz.
 
 **Setup'u indirerek sizde bu programı kurabilirsiniz.**
