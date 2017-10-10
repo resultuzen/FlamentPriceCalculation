@@ -2,7 +2,7 @@
 
 
 ```
-Programı kodlarını görüntülemek ve indirmek için burayı kullanabilirsiniz.
+Programı kodlarını görüntülemek ve indirmek için "setup.exe" dosyasını kullanabilirsiniz.
 ```
 
 
