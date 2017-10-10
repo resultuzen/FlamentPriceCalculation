@@ -1,6 +1,5 @@
 # 3D Parça Maliyeti Hesaplama Programı
 
-
 ```
 Programı kodlarını görüntülemek için "First Screen" ve "Second Screen" dosyasını kullanabilirsiniz.
 ```
@@ -8,6 +7,3 @@ Programı kodlarını görüntülemek için "First Screen" ve "Second Screen" do
 ```
 indirmek için ise "setup.exe" dosyasını kullanabilirsiniz.
 ```
-
-
-**Setup'u indirerek sizde bu programı kurabilirsiniz.**
